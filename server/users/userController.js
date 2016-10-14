@@ -68,6 +68,7 @@ module.exports = {
     var token = req.headers['x-access-token'];
     if (!token) {
       next(new Error('No token'));
+      //res.send(401);
     } else {
       var user = jwt.decode(token, 'secret');
       findUser({username: user.username})

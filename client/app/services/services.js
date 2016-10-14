@@ -60,14 +60,14 @@ angular.module('shortly.services', [])
   };
 
   var isAuth = function () {
-    //return !!$window.localStorage.getItem('com.shortly');
-    return $http({
-      method: 'GET',
-      url: '/api/users/signedin'
-    })
-    .then(function (resp) {
-      return resp.status === 200;
-    });
+    return !!$window.localStorage.getItem('com.shortly');
+    // return $http({
+    //   method: 'GET',
+    //   url: '/api/users/signedin'
+    // })
+    // .then(function (resp) {
+    //   return resp.status === 200;
+    // });
   };
 
   var signout = function () {

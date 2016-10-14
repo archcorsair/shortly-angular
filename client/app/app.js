@@ -22,10 +22,14 @@ angular.module('shortly', [
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
-      controller: 'ShortenController'
+      controller: 'ShortenController',
+      authenticate: true
     })
     .when('/', {
       templateUrl: 'app/index.html'
+    })
+    .when('/:unknown', {
+      templateUrl: 'app/links/links.html'
     });
     // Your code here
 
