@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+mongoose.Promise = Promise;
 
 var app = express();
 
