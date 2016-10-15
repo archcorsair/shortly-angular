@@ -6,4 +6,8 @@
       <li><a href="/signin">Sign In</a></li>
     </ul>
   </navbar>
+  <div ng-repeat='link in data.links'>
+    {{link}}
+    <li><a ng-href='/{{link.code}}' target='_self'>{{link.url}}</a></li>
+  </div>
 </div>
