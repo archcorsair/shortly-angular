@@ -1,5 +1,22 @@
 <div id='container'>
-Enter Your URL:
-<input ng-model="link" type="url" placeholder="HERE"/>
-<button ng-click='addLink()'>Submit</button>
+  <navbar class="navigation">
+    <ul>
+      <li><a class="selected" href="/links">All Links</a></li>
+      <li><a href="/shorten">Shorten</a></li>
+      <li><a href="/signin">Sign In</a></li>
+    </ul>
+  </navbar>
+  <form name='shortenForm'>
+    <label>
+      Enter Your URL:
+      <input name='shortenInput' ng-class="{error: shortenForm.shortenInput.$error.url}" ng-model="link" type="url" placeholder="HERE" required/>
+      <button ng-click='addLink()'>Submit</button>
+    </label>
+    <div role="alert">
+      <!-- <span ng-show='shortenForm.shortenInput.$error.required'>
+        Required!
+      </span> -->
+      <span ng-show='shortenForm.shortenInput.$error.url'>Not valid url!</span>
+    </div>
+  </form>
 </div>
