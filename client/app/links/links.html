@@ -6,8 +6,13 @@
       <li><a href="/signin">Sign In</a></li>
     </ul>
   </navbar>
-  <div ng-repeat='link in data.links'>
-    {{link}}
-    <li><a ng-href='/{{link.code}}' target='_self'>{{link.url}}</a></li>
+  <div class='link' ng-repeat='link in data.links'>
+    <img src='/assets/redirect_icon.png'/>
+    <div class="info">
+      <div class="visits"><span class='count'>{{link.visits}}</span>Visits</div>
+      <div class="title">{{link.title}}</div>
+      <div class="original">{{link.url}}</div>
+      <a ng-href='/{{link.code}}' target='_self'>{{link.baseUrl}}/{{link.code}}</a>
+    </div>
   </div>
 </div>
