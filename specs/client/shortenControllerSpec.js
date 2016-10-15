@@ -47,4 +47,17 @@ describe('ShortenController', function () {
     $scope.addLink();
     $httpBackend.flush();
   });
+
+  it('should be able to create new links with addLink()', function () {
+    $httpBackend.expectPOST('/api/links').respond(201, '');
+    $scope.addLink();
+    $httpBackend.flush();
+  });
+
+  it('should be able to create new links to a site that properly fetch the site', function () {
+    $httpBackend.expectPOST('/api/links').respond(201, {url:'http://www.cnn.com'});
+    $scope.addLink({url:'http://www.cnn.com'});
+    $httpBackend.flush();
+  });
+
 });
